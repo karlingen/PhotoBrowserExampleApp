@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    BackgroundColor="Black"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PhotoBrowserExampleApp;assembly=PhotoBrowserExampleApp"
+    x:Class="PhotoBrowserExampleApp.PhotoBrowserExampleAppPage">
+    <AbsoluteLayout>
+        <Button
+            x:Name="leftButton"
+            Image="left.png"
+            AbsoluteLayout.LayoutBounds="0.05, 0.05, 0.20, 0.15"
+            AbsoluteLayout.LayoutFlags="All"
+            Clicked="HandleLeftButtonClicked" />
+        <ActivityIndicator
+            IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"
+            Color="White"
+            AbsoluteLayout.LayoutBounds="0.5, 0.05, 0.20, 0.20"
+            AbsoluteLayout.LayoutFlags="All" 
+        />
+        <Button
+            x:Name="rightButton"
+            Image="right.png"
+            TextColor="White"
+            AbsoluteLayout.LayoutBounds="0.95, 0.05, 0.20, 0.15"
+            AbsoluteLayout.LayoutFlags="All"
+            Clicked="HandleRightButtonClicked" />
+        <Image
+            x:Name="image"
+            Aspect="AspectFit"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 0.5"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>
